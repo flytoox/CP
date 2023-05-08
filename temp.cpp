@@ -6,40 +6,34 @@
 /*   By: obelaizi <obelaizi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:02:05 by obelaizi          #+#    #+#             */
-/*   Updated: 2023/03/17 22:41:44 by obelaizi         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:04:35 by obelaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <bits/stdc++.h>
 
-# include               <iostream>
-# include               <algorithm>
-# include				<iterator>
-# include               <vector>
-# include               <string>
-# include               <map>
-# include               <unordered_map>
-# include               <set>
-# include               <unordered_set>
-# include               <bitset>
-# include               <queue>
-# include               <stack>
-# include               <complex>
-# include               <cmath>
-# include               <climits>
-# include               <cstring>
 using namespace std;
 
-# define 	prnt_int 			copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
-# define    ll          long long
-# define    ull         unsigned long long
-#define 	yesOrno(x) 	cout << (x? "YES\n": "NO\n")
+# define 	prnt_int	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
+# define	ll	long long
+# define	ull         unsigned long long
+# define 	yesOrno(x) 	cout << (x? "YES\n": "NO\n")
 # define	intcin(x)	for(int& a : x) cin >> a;
+# define	gcd(a, b)	__gcd(a, b)
+# define 	all(v)		v.begin(), v.end() 
 
 typedef vector<int> vi;
 typedef vector<ull> vull;
 typedef vector<ll> vll;
  
- 
+void n(){
+    cout<<"NO"<<endl;
+}
+
+void y(){
+    cout<<"YES"<<endl;
+}
+
 ull     fact(ull n)
 {
     ull res = 1;
@@ -47,28 +41,27 @@ ull     fact(ull n)
     while (n--) res *= (n + 1);
     return (res);
 }
- 
- 
- 
-int get_max (int x1, int x2, int x3)
+
+bool isPrime(ll n)
 {
-	if (x1 > x2 && x1 > x3)
-		return (x1);
-	else if (x2 > 1 && x2 > x3)
-		return (x2);
-	else
-		return (x3);
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+    for (ll i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+    return true;
 }
- 
- 
-int get_min (int x1, int x2, int x3)
+
+bool isPalin(string s)
 {
-	if (x1 < x2 && x1 < x3)
-		return (x1);
-	else if (x2 < 1 && x2 < x3)
-		return (x2);
-	else
-		return (x3);
+    for (int i = 0; i < s.length() / 2; i++)
+        if (s[i] != s[s.length() - i - 1]) 
+		 return false;
+    return true;
 }
 
 void    solve()
@@ -81,6 +74,7 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(0);
     int     cases;
+	// cases = 1;
     cin >> cases;
     while (cases--) solve();
     return (0);	    
