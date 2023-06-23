@@ -3,26 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   temp.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obelaizi <obelaizi@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelaizi <obelaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:02:05 by obelaizi          #+#    #+#             */
-/*   Updated: 2023/05/08 18:04:35 by obelaizi         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:49:02 by obelaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bits/stdc++.h>
+# include		<iostream>
+# include		<algorithm>
+# include		<iterator>
+# include		<vector>
+# include		<string>
+# include		<map>
+# include		<unordered_map>
+# include		<set>
+# include		<unordered_set>
+# include		<bitset>
+# include		<queue>
+# include		<stack>
+# include		<complex>
+# include		<cmath>
+# include		<climits>
+# include		<cstring>
 
 using namespace std;
 
-# define 	prnt_int	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
-# define	ll	long long
+# define	prnt(v)		for(auto &a : v) cout << a << " "; cout << endl;
+# define	ll			long long
 # define	ull         unsigned long long
 # define 	yesOrno(x) 	cout << (x? "YES\n": "NO\n")
-# define	intcin(x)	for(int& a : x) cin >> a;
+# define	intcin(x)	for(auto &a : x) cin >> a;
 # define	gcd(a, b)	__gcd(a, b)
 # define 	all(v)		v.begin(), v.end() 
+# define 	rall(v)		v.rbegin(), v.rend()
+# define 	rev(v)		reverse(all(v))
+# define 	sortA(v)	sort(all(v))
+# define 	sortD(v)	sort(rall(v))
+# define 	sum(v)		accumulate(all(v), 0)
+# define 	Vmax(v)		*max_element(all(v))
+# define 	Vmin(v)		*min_element(all(v))
+# define 	pb(x)		push_back(x)
+# define    endl		"\n"
+# define    sz(x)       (int)x.size()
 
+typedef vector<string> vs;
+typedef vector<vector<string>> vvs;
 typedef vector<int> vi;
+typedef vector<vector<int>> vvi;
 typedef vector<ull> vull;
 typedef vector<ll> vll;
  
@@ -66,16 +94,17 @@ bool isPalin(string s)
 
 void    solve()
 {
-
 }
 
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-    int     cases;
-	// cases = 1;
-    cin >> cases;
+
+    int	cases;
+
+	cases = 1;
+    // cin >> cases;
     while (cases--) solve();
     return (0);	    
 }
