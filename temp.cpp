@@ -106,11 +106,46 @@ ll exp(ll a, ll b)
     return (res);
 }
 
+vi prefxArr(string &s) {
+    int j=0,n = (int)s.length();
+    vi pi(n);
+    for (int i = 1; i < n; i++)
+    {
+        while (j > 0 && s[i] != s[j])
+            j = pi[j-1];
+        if (s[i] == s[j])
+            j++;
+        pi[i] = j;
+    }
+    return pi;
+}
+
+int KMP(string& s, string& patt)
+{
+    int n = s.length(), cnt=0, m = patt.length(), i = 0,j=0;
+    vi pi = prefxArr(patt);
+
+    while (i < n)
+    {
+        if (patt[j] == s[i])
+            i++, j++;
+        if (j == m)
+            cnt++, j = pi[j - 1];
+        else if (i < n && patt[j] != s[i])
+        {
+            if (j != 0)
+                j = pi[j - 1];
+            else
+                i++;
+        }
+    }
+    return cnt;
+}
+
 void solve()
 {
 }
 
- 
 int32_t main()
 {
     ios::sync_with_stdio(false);
